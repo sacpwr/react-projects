@@ -1,0 +1,55 @@
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid grey;
+  height: 300px;
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.image {
+  background-color: green;
+  height: 150px;
+  background-size: 100% 130%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.details {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.type-likes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.type-chip {
+  background-color: rgb(197, 61, 61);
+  padding: 5px 8px;
+  border: 1px solid grey;
+  border-radius: 12px;
+  color: rgb(255, 255, 255);
+}
+
+.likes {
+  /* empty */
+}
+
+.name {
+  font-size: 14px;
+  font-weight: bold;
+}

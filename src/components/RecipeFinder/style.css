@@ -1,0 +1,21 @@
+.recipe-text {
+  font-size: 15px;
+  width: 400px;
+  height: 20px;
+  padding: 5px;
+}
+
+.search-button {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 15px;
+  color: white;
+  background-color: rgb(28, 79, 198);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid lightblue;
+}
+
+.search-bar {
+  margin-bottom: 10px;
+}

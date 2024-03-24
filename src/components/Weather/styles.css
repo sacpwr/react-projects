@@ -1,0 +1,30 @@
+.load-data {
+  cursor: pointer;
+  border: 2px solid rgb(111, 110, 110);
+  background-color: rgb(88, 78, 230);
+  color: azure;
+  padding: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 10px 10px 10px 0px;
+  border-radius: 5px;
+}
+
+.weather-data {
+  border: 1px solid grey;
+  border-collapse: collapse;
+}
+
+.weather-data th {
+  background-color: rgb(83, 214, 83);
+  color: white;
+  padding: 5px;
+}
+
+.weather-data td {
+  padding: 5px;
+}
+
+.weather-data tr:nth-child(odd) {
+  background-color: rgb(212, 213, 212);
+  color: black;
+}

@@ -1,0 +1,50 @@
+.head-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+}
+
+.select-view-text {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.select-view {
+  padding: 5px 10px;
+  margin: 5px;
+  width: 150px;
+  font-size: 15px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  color: black;
+  border: 2px solid #ccc;
+}
+
+option {
+  border: 2px solid #ccc;
+  padding: 5px 10px;
+  margin: 5px;
+  width: 150px;
+
+  cursor: pointer;
+}
+
+.hr {
+  background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

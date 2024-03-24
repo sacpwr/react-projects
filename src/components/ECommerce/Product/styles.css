@@ -1,0 +1,75 @@
+.ecom-product-image {
+  height: 320px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  cursor: pointer;
+}
+
+.ecom-product-card {
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 30px;
+  cursor: default;
+  outline: none;
+  /* background-color: lightgoldenrodyellow; */
+}
+
+.ecom-product-title {
+  position: relative;
+  padding: 0 20px;
+  height: 45px;
+}
+
+.ecom-product-dash {
+  width: 20px;
+  height: 2px;
+  background-color: #eabf00;
+  border-color: #eabf00;
+  border-radius: 0;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: 10px;
+}
+
+.product-value {
+  margin: 0;
+}
+
+.product-value small {
+  font-size: 80%;
+}
+.product-value b {
+  font-size: 1.5em;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.ecom-product-installment {
+  margin: 0;
+  color: #9c9b9b;
+}
+
+.ecom-product-installment b {
+  font-weight: bold;
+}
+
+.ecom-product-add-button {
+  background-color: #1b1a20;
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 10px px;
+  cursor: pointer;
+  width: 100%;
+  border: 0;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.ecom-product-add-button:hover {
+  background-color: #eabf00;
+}

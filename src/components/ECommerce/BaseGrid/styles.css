@@ -1,0 +1,35 @@
+.ecom-container {
+  /* border: 2px solid grey; */
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  max-width: 1200px;
+  margin: 0px auto auto;
+}
+
+.ecom-products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.found-elements {
+  padding: 15px 15px;
+  display: grid;
+  height: 30px;
+  font-size: 15px;
+  align-content: center;
+}
+
+.product-free-shipping {
+  position: absolute;
+  color: #ececec;
+  top: 10px;
+  right: 10px;
+  padding: 0px 5px;
+  font-size: 0.6em;
+  background-color: #1b1a20;
+  cursor: default;
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 20px;
+  opacity: 0.5;
+}

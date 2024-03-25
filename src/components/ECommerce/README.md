@@ -6,3 +6,5 @@ redux-reducer
 -cart setting
 -cart-count
 font size
+cart scroll css
+empty cart condition

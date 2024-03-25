@@ -1,9 +1,10 @@
 .ecom-product-image {
-  height: 320px;
+  height: 270px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   cursor: pointer;
+  position: relative;
 }
 
 .ecom-product-card {
@@ -72,4 +73,15 @@
 
 .ecom-product-add-button:hover {
   background-color: #eabf00;
+}
+
+@media only screen and (min-width: 480px) {
+  .ecom-product-image {
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    cursor: pointer;
+    position: relative;
+  }
 }

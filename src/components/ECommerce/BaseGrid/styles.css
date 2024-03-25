@@ -1,14 +1,14 @@
 .ecom-container {
   /* border: 2px solid grey; */
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr;
   max-width: 1200px;
   margin: 0px auto auto;
 }
 
 .ecom-products {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .found-elements {
@@ -32,4 +32,24 @@
   font-size: 12px;
   border-radius: 20px;
   opacity: 0.5;
+}
+
+@media only screen and (min-width: 768px) {
+  .ecom-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    max-width: 1200px;
+    margin: 0px auto auto;
+  }
+  .ecom-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .ecom-products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

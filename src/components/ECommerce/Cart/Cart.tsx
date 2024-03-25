@@ -19,7 +19,12 @@ export default function Cart() {
         </div>
       </div>
       <div className={`open-cart ${openState ? "" : "close-cart"}`}>
-        <button className={`open-cart-close`} onClick={handleOpenState}>
+        <button
+          className={`open-cart-close ${
+            openState ? "" : "open-cart-close-hide"
+          }`}
+          onClick={handleOpenState}
+        >
           <span>X</span>
         </button>
         <div className="open-cart-heading">
@@ -63,10 +68,199 @@ export default function Cart() {
               </div>
             </div>
           </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
+          <div className="cart-item-details">
+            <button
+              title="remove product from cart"
+              className="cart-item-remove"
+            ></button>
+            <img
+              src="/products/9197907543445676-1-cart.webp"
+              alt="Skater Black Sweatshirt"
+              className="cart-item-image"
+            />
+            <div className="cart-item-info">
+              <p className="cart-item-name">Skater Black Sweatshirt</p>
+              <p className="cart-item-type-quantity">
+                XL | Tony Hawk <br />
+                Quantity: 1
+              </p>
+            </div>
+            <div className="cart-item-price">
+              <p>$ 25.90</p>
+              <div>
+                <button disabled="" className="cart-item-change-quantity">
+                  -
+                </button>
+                <button className="cart-item-change-quantity">+</button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="cart-total">
-          <div className="cart-subtotal-text cart-total-ite">SUBTOTAL</div>
+          <div className="cart-subtotal-text">SUBTOTAL</div>
           <div className="cart-subtotal-amount">$ 10.0</div>
           <div className="checkout-button">CHECKOUT</div>
         </div>

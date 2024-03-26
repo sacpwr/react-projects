@@ -37,7 +37,7 @@ export default function Cart() {
         </div>
 
         <div className="cart-items">
-          {/*  <p className="cart-item-empty">
+          {/* <p className="cart-item-empty">
             Add some products in the cart <br />
             😑
           </p> */}

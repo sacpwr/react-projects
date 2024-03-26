@@ -8,3 +8,4 @@ redux-reducer
 font size
 cart scroll css
 empty cart condition
+cart title center

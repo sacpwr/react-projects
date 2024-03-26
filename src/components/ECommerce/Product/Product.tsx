@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./styles.css";
+import { useAppDispatch } from "../redux/hooks";
+import { addToCart } from "../redux/productSlice";
 
 export default function Product({ product }) {
   const [onMouseHover, setOnMouseHover] = useState(false);
+  const dispatch = useAppDispatch();
 
   const handleMouseOver = () => {
     setOnMouseHover(true);
@@ -18,6 +21,10 @@ export default function Product({ product }) {
         ? `/products/${product.sku}-1-product.webp`
         : `/products/${product.sku}-2-product.webp`
     })`,
+  };
+
+  const addProductToCart = () => {
+    dispatch(addToCart({ id: product.id }));
   };
 
   const formatPrice = (price: number, currencyId: string): string => {
@@ -61,7 +68,7 @@ export default function Product({ product }) {
             )}
           </b>
         </p>
-        <button tabIndex="-1" class="ecom-product-add-button">
+        <button onClick={addProductToCart} className="ecom-product-add-button">
           Add to cart
         </button>
       </div>

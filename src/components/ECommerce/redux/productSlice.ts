@@ -119,6 +119,11 @@ const productSlice = createSlice({
 
       state.data.cartProductIds.delete(productId);
     },
+    checkOutAllItems: (state) => {
+      state.data.cartQuantityCount = 0;
+      state.data.totalAmount = 0;
+      state.data.cartProductIds.clear();
+    },
   },
 });
 
@@ -143,4 +148,5 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   removeCartItem,
+  checkOutAllItems,
 } = productSlice.actions;

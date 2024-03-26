@@ -1,16 +1,23 @@
 import { useState } from "react";
 import "./styles.css";
-import { useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import CartProduct from "./CartProduct/CartProduct";
+import { checkOutAllItems } from "../redux/productSlice";
 
 export default function Cart() {
   const [openState, setOpenState] = useState(false);
   const { cartQuantityCount, cartProductIds, totalAmount } = useAppSelector(
     (state) => state.product.data
   );
+  const dispatch = useAppDispatch();
 
   const handleOpenState = () => {
     setOpenState(!openState);
+  };
+
+  const handleCheckout = () => {
+    dispatch(checkOutAllItems());
+    alert(`You successfully checkout all items`);
   };
 
   return (
@@ -66,7 +73,9 @@ export default function Cart() {
         <div className="cart-total">
           <div className="cart-subtotal-text">SUBTOTAL</div>
           <div className="cart-subtotal-amount">$ {totalAmount}</div>
-          <div className="checkout-button">CHECKOUT</div>
+          <div className="checkout-button" onClick={handleCheckout}>
+            CHECKOUT
+          </div>
         </div>
       </div>
     </div>

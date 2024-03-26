@@ -20,8 +20,19 @@ export default function Product({ product }) {
     })`,
   };
 
+  const formatPrice = (price: number, currencyId: string): string => {
+    switch (currencyId) {
+      case "BRL":
+        return price.toFixed(2).replace(".", ",");
+      default:
+        return price.toFixed(2);
+    }
+  };
+
+  const formattedPrice = formatPrice(product.price, product.currencyId);
+
   return (
-    <div className="ecom-product-card">
+    <div className="ecom-product-card" key={product.title}>
       {product.isFreeShipping ? (
         <div className="product-free-shipping">Free shipping</div>
       ) : (
@@ -33,19 +44,22 @@ export default function Product({ product }) {
         style={productImageStyle}
         className="ecom-product-image"
       ></div>
-      <p className="ecom-product-title">
-        Black Batman T-shirt
-        <hr className="ecom-product-dash" />
-      </p>
+      <p className="ecom-product-title">{product.title}</p>
       <div className="ecom-product-prices">
         <p className="product-value">
-          <small>$</small>
-          <b>10</b>
-          <span>.0</span>
+          <small>{product.currencyFormat}</small>
+          <b>{formattedPrice.substring(0, formattedPrice.length - 3)}</b>
+          <span>{formattedPrice.substring(formattedPrice.length - 3)}</span>
         </p>
         <p className="ecom-product-installment">
-          <span>or 9 x</span>
-          <b>$1.21</b>
+          <span>or {product.installments} x</span>
+          <b>
+            {product.currencyFormat}
+            {formatPrice(
+              product.price / product.installments,
+              product.currencyId
+            )}
+          </b>
         </p>
         <button tabIndex="-1" class="ecom-product-add-button">
           Add to cart

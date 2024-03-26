@@ -23,17 +23,15 @@
   height: 45px;
 }
 
-.ecom-product-dash {
+.ecom-product-title::before {
+  content: "";
   width: 20px;
   height: 2px;
   background-color: #eabf00;
-  border-color: #eabf00;
-  border-radius: 0;
   position: absolute;
   bottom: 0;
   left: 50%;
   margin-left: -10px;
-  margin-top: 10px;
 }
 
 .product-value {
@@ -62,7 +60,7 @@
   background-color: #1b1a20;
   color: #fff;
   padding: 15px 0;
-  margin-top: 10px px;
+  margin-top: 10px;
   cursor: pointer;
   width: 100%;
   border: 0;

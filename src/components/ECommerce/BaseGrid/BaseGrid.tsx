@@ -3,7 +3,7 @@ import SizeFilters from "../SizeFilters/SizeFilters";
 import "./styles.css";
 
 import { useAppSelector } from "../redux/hooks";
-import { ProductType } from "../utils/types";
+import { IProduct } from "../utils/types";
 
 export default function BaseGrid() {
   const productList = useAppSelector((state) => state.product.data.productList);
@@ -29,7 +29,7 @@ export default function BaseGrid() {
           </div>
           <div className="ecom-products">
             {(isFilterApplied ? filterProductList : productList).map(
-              (product: ProductType) => (
+              (product: IProduct) => (
                 <Product key={product.id} product={product} />
               )
             )}

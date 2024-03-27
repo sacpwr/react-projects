@@ -1,14 +1,14 @@
 import { useState } from "react";
-import "./styles.css";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import CartProduct from "./CartProduct/CartProduct";
 import { checkOutAllItems } from "../redux/productSlice";
+import { formatPrice } from "../utils/functions";
+import CartProduct from "./CartProduct/CartProduct";
+import "./styles.css";
 
 export default function Cart() {
   const [openState, setOpenState] = useState(false);
-  const { cartQuantityCount, cartProductIds, totalAmount } = useAppSelector(
-    (state) => state.product.data
-  );
+  const { cartQuantityCount, cartProductIds, totalAmount, totalInstallMents } =
+    useAppSelector((state) => state.product.data);
   const dispatch = useAppDispatch();
 
   const handleOpenState = () => {
@@ -72,7 +72,17 @@ export default function Cart() {
 
         <div className="cart-total">
           <div className="cart-subtotal-text">SUBTOTAL</div>
-          <div className="cart-subtotal-amount">$ {totalAmount}</div>
+          <div className="cart-subtotal-amount">
+            $ {totalAmount} <br />
+            {`OR UP TO ${totalInstallMents} x $ ${
+              Number(totalInstallMents)
+                ? formatPrice(
+                    Number(totalAmount) / Number(totalInstallMents),
+                    "USD"
+                  )
+                : "0"
+            }`}
+          </div>
           <div className="checkout-button" onClick={handleCheckout}>
             CHECKOUT
           </div>

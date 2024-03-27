@@ -1,4 +1,4 @@
-export type ProductType = {
+export type IProduct = {
   availableSizes: string[];
   currencyFormat: string;
   currencyId: string;

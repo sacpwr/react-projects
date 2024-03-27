@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "./styles.css";
 import { useAppDispatch } from "../redux/hooks";
 import { addToCart } from "../redux/productSlice";
+import { formatPrice } from "../utils/functions";
+import "./styles.css";
 
 export default function Product({ product }) {
   const [onMouseHover, setOnMouseHover] = useState(false);
@@ -25,15 +26,6 @@ export default function Product({ product }) {
 
   const addProductToCart = () => {
     dispatch(addToCart({ id: product.id }));
-  };
-
-  const formatPrice = (price: number, currencyId: string): string => {
-    switch (currencyId) {
-      case "BRL":
-        return price.toFixed(2).replace(".", ",");
-      default:
-        return price.toFixed(2);
-    }
   };
 
   const formattedPrice = formatPrice(product.price, product.currencyId);

@@ -5,6 +5,7 @@ import WeatherDetails from "./components/Weather/Weather";
 import RecipeFinder from "./components/RecipeFinder/RecipeFinder";
 import GridView from "./components/GridView/GridView";
 import ECommerce from "./components/ECommerce";
+import Slider from "./components/Slider/Slider";
 
 function App() {
   const views = [
@@ -13,8 +14,9 @@ function App() {
     "RecipeFinder",
     "GridView",
     "E-commerce",
+    "Slider",
   ];
-  const [selectedView, setSelectedView] = useState(views[4]);
+  const [selectedView, setSelectedView] = useState(views[5]);
 
   const renderViews = () => {
     switch (selectedView) {
@@ -28,6 +30,8 @@ function App() {
         return <GridView />;
       case "E-commerce":
         return <ECommerce />;
+      case "Slider":
+        return <Slider />;
       default:
         return <span>No View Selected</span>;
     }

@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
+
+type ImageURL = { imageUrl: string; left: string };
+
 export default function Slider() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [currentLeftPX, setCurrentLeftPX] = useState(0);
-  const [imageUrls, setImageUrls] = useState(Array<string>);
-  const defaultWidth: number = 1200;
+  const [imageUrls, setImageUrls] = useState(Array<ImageURL>);
+  const defaultWidth: number = 600;
 
   const slideRight = () => {
     setCurrentImage((currImage) => {
       if (currImage != imageUrls.length - 1) {
         currImage = currImage + 1;
       }
-      setCurrentLeftPX(defaultWidth * currImage);
+      setImageUrls((imageUrls) => {
+        imageUrls[currImage - 1].left = "600px";
+        imageUrls[currImage - 1].left = "0px";
+        return imageUrls;
+      });
       return currImage;
     });
   };
@@ -23,7 +29,6 @@ export default function Slider() {
       } else {
         currImage = currImage - 1;
       }
-      setCurrentLeftPX(defaultWidth * currImage);
       return currImage;
     });
   };
@@ -34,8 +39,13 @@ export default function Slider() {
     )
       .then((response) => response.json())
       .then((res) => {
-        const largeImageURLs = res.hits.map((hit) => hit.largeImageURL);
-        setImageUrls(largeImageURLs);
+        const imageURLs: ImageURL[] = res.hits.map((hit) => {
+          return {
+            imageUrl: hit.largeImageURL,
+            left: 0,
+          };
+        });
+        setImageUrls(imageURLs);
       });
 
     return () => {};
@@ -44,19 +54,17 @@ export default function Slider() {
   return (
     <div>
       <div className="slider">
-        {currentImage != 0 && (
-          <button className="left-arrow" onClick={slideLeft}></button>
-        )}
-        {currentImage != imageUrls.length - 1 && (
-          <button className="right-arrow" onClick={slideRight}></button>
-        )}
-        {imageUrls.map((url, index) => (
+        <button className="left-arrow" onClick={slideLeft}></button>
+        <button className="right-arrow" onClick={slideRight}></button>
+        {imageUrls.map(({ imageUrl, left }, index) => (
           <div
             key={index}
             className="slide"
+            data-index={index}
             style={{
-              backgroundImage: `url(${url})`,
-              left: `-webkit-calc(0% - ${currentLeftPX}px)`,
+              backgroundImage: `url(${imageUrl})`,
+              left,
+              order: `${index == imageUrls.length - 1 ? 1 : index + 2}`,
               transition: "left 1s",
             }}
           ></div>
@@ -65,3 +73,8 @@ export default function Slider() {
     </div>
   );
 }
+
+/* 
+order 
+size manage
+*/

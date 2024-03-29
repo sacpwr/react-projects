@@ -6,6 +6,7 @@ import RecipeFinder from "./components/RecipeFinder/RecipeFinder";
 import GridView from "./components/GridView/GridView";
 import ECommerce from "./components/ECommerce";
 import Slider from "./components/Slider/Slider";
+import SliderInfinite from "./components/SliderInfinite/SliderInfinite";
 
 function App() {
   const views = [
@@ -15,8 +16,9 @@ function App() {
     "GridView",
     "E-commerce",
     "Slider",
+    "SliderInfinite",
   ];
-  const [selectedView, setSelectedView] = useState(views[5]);
+  const [selectedView, setSelectedView] = useState(views[6]);
 
   const renderViews = () => {
     switch (selectedView) {
@@ -32,6 +34,8 @@ function App() {
         return <ECommerce />;
       case "Slider":
         return <Slider />;
+      case "SliderInfinite":
+        return <SliderInfinite />;
       default:
         return <span>No View Selected</span>;
     }

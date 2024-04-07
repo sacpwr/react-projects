@@ -12,7 +12,8 @@
         "price": 10.9,
         "sku": 8552515751438644,
         "style": "White T-shirt",
-        "title": "Cropped Stay Groovy off white"
+        "title": "Cropped Stay Groovy off white",
+        "gender": "F"
       },
       {
         "availableSizes": ["X", "ML", "L"],
@@ -25,7 +26,8 @@
         "price": 13.25,
         "sku": 39876704341265610,
         "style": "Wine",
-        "title": "Basic Cactus White T-shirt"
+        "title": "Basic Cactus White T-shirt",
+        "gender": "F"
       },
       {
         "availableSizes": ["XL"],
@@ -38,7 +40,8 @@
         "price": 25.9,
         "sku": 9197907543445676,
         "style": "Tony Hawk",
-        "title": "Skater Black Sweatshirt"
+        "title": "Skater Black Sweatshirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["M", "ML"],
@@ -51,7 +54,8 @@
         "price": 29.45,
         "sku": 51498472915966370,
         "style": "Tule",
-        "title": "Black Tule Oversized"
+        "title": "Black Tule Oversized",
+        "gender": "F"
       },
       {
         "availableSizes": ["S", "XS"],
@@ -64,7 +68,8 @@
         "price": 10.9,
         "sku": 12064273040195392,
         "style": "Really Cool T-shirt",
-        "title": "Black Batman T-shirt"
+        "title": "Black Batman T-shirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["X", "L", "XL"],
@@ -77,7 +82,8 @@
         "price": 9,
         "sku": 10686354557628304,
         "style": "Mark Zuck have 365 of this one",
-        "title": "Blue T-Shirt"
+        "title": "Blue T-Shirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["X", "L", "XL", "XXL"],
@@ -90,7 +96,8 @@
         "price": 14,
         "sku": 11033926921508488,
         "style": "Fancy T-shirt",
-        "title": "Loose Black T-shirt"
+        "title": "Loose Black T-shirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["X", "L", "XL", "XXL"],
@@ -103,7 +110,8 @@
         "price": 10.9,
         "sku": 18644119330491310,
         "style": "White T-shirt",
-        "title": "Ringer Hall Pass"
+        "title": "Ringer Hall Pass",
+        "gender": "F"
       },
       {
         "availableSizes": ["X", "L"],
@@ -116,7 +124,8 @@
         "price": 14.9,
         "sku": 11854078013954528,
         "style": "You will like this one",
-        "title": "Grey T-shirt"
+        "title": "Grey T-shirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["X", "L"],
@@ -129,7 +138,8 @@
         "price": 14.9,
         "sku": 876661122392077,
         "style": "Adidas originals",
-        "title": "Black T-shirt with white stripes"
+        "title": "Black T-shirt with white stripes",
+        "gender": "F"
       },
       {
         "availableSizes": ["X", "L", "XL"],
@@ -142,7 +152,8 @@
         "price": 10.9,
         "sku": 10547961582846888,
         "style": "Cowabunga!",
-        "title": "Turtles Ninja T-shirt"
+        "title": "Turtles Ninja T-shirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["XL", "XXL"],
@@ -155,7 +166,8 @@
         "price": 49.9,
         "sku": 6090484789343891,
         "style": "When you wish well",
-        "title": "Slim black T-shirt"
+        "title": "Slim black T-shirt",
+        "gender": "F"
       },
       {
         "availableSizes": ["S"],
@@ -168,7 +180,8 @@
         "price": 22.5,
         "sku": 18532669286405344,
         "style": "Very comfy",
-        "title": "Blue Sweatshirt"
+        "title": "Blue Sweatshirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["XL"],
@@ -181,7 +194,8 @@
         "price": 18.7,
         "sku": 5619496040738316,
         "style": "Girl the future is all your",
-        "title": "White T-shirt Gucci"
+        "title": "White T-shirt Gucci",
+        "gender": "F"
       },
       {
         "availableSizes": ["L", "XL"],
@@ -194,7 +208,8 @@
         "price": 134.9,
         "sku": 11600983276356164,
         "style": "Fancy T-shirt",
-        "title": "Tropical Wine T-shirt"
+        "title": "Tropical Wine T-shirt",
+        "gender": "M"
       },
       {
         "availableSizes": ["L", "XL"],
@@ -207,7 +222,8 @@
         "price": 49,
         "sku": 27250082398145996,
         "style": "Fancy T-shirt",
-        "title": "Marine Blue T-shirt"
+        "title": "Marine Blue T-shirt",
+        "gender": "F"
       }
     ]
   }

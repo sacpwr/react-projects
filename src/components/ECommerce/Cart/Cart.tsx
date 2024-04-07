@@ -1,18 +1,21 @@
-import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { checkOutAllItems } from "../redux/productSlice";
+import { cartOpenStateUpdate, checkOutAllItems } from "../redux/productSlice";
 import { formatPrice } from "../utils/functions";
 import CartProduct from "./CartProduct/CartProduct";
 import "./styles.css";
 
 export default function Cart() {
-  const [openState, setOpenState] = useState(false);
-  const { cartQuantityCount, cartProductIds, totalAmount, totalInstallMents } =
-    useAppSelector((state) => state.product.data);
+  const {
+    cartQuantityCount,
+    cartProductIds,
+    totalAmount,
+    totalInstallMents,
+    cartOpenState,
+  } = useAppSelector((state) => state.product.data);
   const dispatch = useAppDispatch();
 
   const handleOpenState = () => {
-    setOpenState(!openState);
+    dispatch(cartOpenStateUpdate(!cartOpenState));
   };
 
   const handleCheckout = () => {
@@ -22,21 +25,8 @@ export default function Cart() {
 
   return (
     <div className="all-cart">
-      <div
-        className={`cart-symbol ${openState ? "cart-symbol-hide" : ""}`}
-        onClick={handleOpenState}
-      >
-        <div title="Products in cart quantity" className="cart-count">
-          {cartQuantityCount}
-        </div>
-      </div>
-      <div className={`open-cart ${openState ? "" : "close-cart"}`}>
-        <button
-          className={`open-cart-close ${
-            openState ? "" : "open-cart-close-hide"
-          }`}
-          onClick={handleOpenState}
-        >
+      <div className={`open-cart ${cartOpenState ? "" : "close-cart"}`}>
+        <button className={`open-cart-close`} onClick={handleOpenState}>
           <span>X</span>
         </button>
         <div className="open-cart-heading">

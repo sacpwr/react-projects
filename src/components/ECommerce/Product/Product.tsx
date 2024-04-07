@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { useAppDispatch } from "../redux/hooks";
-import { addToCart } from "../redux/productSlice";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { addToCart, addToWishlist } from "../redux/productSlice";
 import { formatPrice } from "../utils/functions";
 import "./styles.css";
 
 export default function Product({ product }) {
+  const { wishlistProductIds } = useAppSelector((state) => state.product.data);
   const [onMouseHover, setOnMouseHover] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -28,6 +29,10 @@ export default function Product({ product }) {
     dispatch(addToCart({ id: product.id }));
   };
 
+  const addProductToWishlist = () => {
+    dispatch(addToWishlist({ id: product.id }));
+  };
+
   const formattedPrice = formatPrice(product.price, product.currencyId);
 
   return (
@@ -37,6 +42,14 @@ export default function Product({ product }) {
       ) : (
         ""
       )}
+      <div
+        className={`whitelist-product ${
+          wishlistProductIds.findIndex((id) => id == product.id) != -1
+            ? "wishlist-added"
+            : ""
+        }`}
+        onClick={addProductToWishlist}
+      ></div>
       <div
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}

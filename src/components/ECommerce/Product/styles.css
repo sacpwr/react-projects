@@ -3,7 +3,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  cursor: pointer;
   position: relative;
 }
 
@@ -72,13 +71,56 @@
   background-color: #eabf00;
 }
 
+.product-free-shipping {
+  position: absolute;
+  color: #ececec;
+  top: 10px;
+  left: 10px;
+  padding: 0px 5px;
+  font-size: 0.8em;
+  background-color: #1b1a20;
+  cursor: default;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.whitelist-product {
+  background: url(wishlist.png);
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: -2px -1px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wishlist-added {
+  background: url(wishlist-red.png);
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: -2px -1px;
+  -webkit-tap-highlight-color: transparent;
+}
+
 @media only screen and (min-width: 480px) {
   .ecom-product-image {
     height: 320px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-    cursor: pointer;
     position: relative;
+  }
+  .whitelist-product:hover {
+    background: url(wishlist-red.png);
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: -2px -1px;
+    -webkit-tap-highlight-color: transparent;
   }
 }

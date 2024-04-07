@@ -14,18 +14,34 @@ type InitialState = {
     cartQuantityCount: number;
     totalAmount: number;
     totalInstallMents: number;
+    cartOpenState: boolean;
+    menuState: boolean;
+    searchText: string;
+    selectedSizeTypes: Set<string>;
+    selectedGenders: Set<string>;
+    wishlistProductIds: Array<string>;
+    wishlistCount: number;
+    wishlistOpenState: boolean;
   };
 };
 
 const initialState: InitialState = {
   data: {
-    productList: data.products,
+    productList: JSON.parse(JSON.stringify(data.products)),
     filterProductList: [],
     isFilterApplied: false,
-    cartProductIds: new Map(),
+    cartProductIds: new Map<number, number>(),
     cartQuantityCount: 0,
     totalAmount: 0,
     totalInstallMents: 0,
+    cartOpenState: false,
+    menuState: true,
+    searchText: "",
+    selectedSizeTypes: new Set<string>(),
+    selectedGenders: new Set<string>(),
+    wishlistProductIds: [],
+    wishlistCount: 0,
+    wishlistOpenState: false,
   },
 };
 
@@ -33,36 +49,23 @@ const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
+    searchBarFilter: (state, action) => {
+      const searchText = action.payload.searchText;
+      const selectedSizeTypes = state.data.selectedSizeTypes;
+      const selectedGenders = state.data.selectedGenders;
+      filterProducts(state, searchText, selectedSizeTypes, selectedGenders);
+    },
     sizeFilter: (state, action) => {
       const selectedSizeTypes = action.payload.selectedSizeTypes as Set<string>;
-      if (selectedSizeTypes.size == 0) {
-        state.data = {
-          ...state.data,
-          filterProductList: [],
-          isFilterApplied: false,
-        };
-
-        return;
-      }
-
-      const productList = [...state.data.productList];
-      const filterProductMap = new Map<number, IProduct>();
-
-      productList.forEach((product: IProduct, index) => {
-        for (let i = 0; i < product.availableSizes.length; i++) {
-          const size = product.availableSizes[i];
-          if (selectedSizeTypes.has(size)) {
-            filterProductMap.set(index, product);
-            break;
-          }
-        }
-      });
-
-      state.data = {
-        ...state.data,
-        filterProductList: Array.from(filterProductMap.values()),
-        isFilterApplied: true,
-      };
+      const searchText = state.data.searchText;
+      const selectedGenders = state.data.selectedGenders;
+      filterProducts(state, searchText, selectedSizeTypes, selectedGenders);
+    },
+    genderFilter: (state, action) => {
+      const selectedGenders = action.payload.selectedGenders as Set<string>;
+      const searchText = state.data.searchText;
+      const selectedSizeTypes = state.data.selectedSizeTypes;
+      filterProducts(state, searchText, selectedSizeTypes, selectedGenders);
     },
     addToCart: (state, action) => {
       const cartProductKeys = Array.from(state.data.cartProductIds.keys());
@@ -81,6 +84,20 @@ const productSlice = createSlice({
 
       manageTotalAmount(state, productId, 1, true);
       manageTotalInstallment(state);
+    },
+    addToWishlist: (state, action) => {
+      const productId = action.payload.id;
+
+      if (state.data.wishlistProductIds.includes(productId)) {
+        state.data.wishlistProductIds.splice(
+          state.data.wishlistProductIds.findIndex((id) => id == productId),
+          1
+        );
+        state.data.wishlistCount--;
+      } else {
+        state.data.wishlistProductIds.push(productId);
+        state.data.wishlistCount++;
+      }
     },
     increaseQuantity: (state, action) => {
       const productId = action.payload.id;
@@ -123,11 +140,32 @@ const productSlice = createSlice({
       state.data.cartProductIds.delete(productId);
       manageTotalInstallment(state);
     },
+    removeWishlistItem: (state, action) => {
+      const productId = action.payload.id;
+
+      state.data.wishlistCount--;
+
+      state.data.wishlistProductIds.splice(
+        state.data.wishlistProductIds.findIndex((id) => id == productId),
+        1
+      );
+    },
     checkOutAllItems: (state) => {
       state.data.cartQuantityCount = 0;
       state.data.totalAmount = 0;
       state.data.cartProductIds.clear();
       manageTotalInstallment(state);
+    },
+    cartOpenStateUpdate: (state, action) => {
+      const { cartOpenState } = action.payload;
+      state.data.cartOpenState = cartOpenState;
+    },
+    wishlistOpenStateUpdate: (state, action) => {
+      const { wishlistOpenState } = action.payload;
+      state.data.wishlistOpenState = wishlistOpenState;
+    },
+    menuStateUpdate: (state) => {
+      state.data.menuState = !state.data.menuState;
     },
   },
 });
@@ -169,12 +207,85 @@ const manageTotalInstallment = (state) => {
   state.data.totalInstallMents = totalInstallMents;
 };
 
+const filterProducts = (
+  state,
+  searchText,
+  selectedSizeTypes,
+  selectedGenders
+) => {
+  if (!searchText && selectedSizeTypes.size == 0 && selectedGenders.size == 0) {
+    state.data = {
+      ...state.data,
+      filterProductList: [],
+      isFilterApplied: false,
+      searchText: "",
+      selectedSizeTypes: new Set<string>(),
+      selectedGenders: new Set<string>(),
+    };
+
+    return;
+  }
+
+  const productList = [...state.data.productList];
+  const filterProductMap = new Map<number, IProduct>();
+
+  productList.forEach((product: IProduct, index) => {
+    for (let i = 0; i < product.availableSizes.length; i++) {
+      const title = product.title;
+      const size = product.availableSizes[i];
+      const gender = product.gender;
+      let isTitleFound = false,
+        isSizeFound = false,
+        isGendersFound = false;
+
+      if (
+        selectedSizeTypes.size == 0 ||
+        (selectedSizeTypes.size && selectedSizeTypes.has(size))
+      ) {
+        isSizeFound = true;
+      }
+      if (
+        selectedGenders.size == 0 ||
+        (selectedGenders.size && selectedGenders.has(gender))
+      ) {
+        isGendersFound = true;
+      }
+      if (
+        !searchText ||
+        (searchText && title.toLowerCase().includes(searchText.toLowerCase()))
+      ) {
+        isTitleFound = true;
+      }
+
+      if (isTitleFound && isSizeFound && isGendersFound) {
+        filterProductMap.set(index, product);
+        break;
+      }
+    }
+  });
+  state.data = {
+    ...state.data,
+    filterProductList: Array.from(filterProductMap.values()),
+    isFilterApplied: true,
+    searchText,
+    selectedSizeTypes,
+    selectedGenders,
+  };
+};
+
 export default productSlice.reducer;
 export const {
+  searchBarFilter,
   sizeFilter,
+  genderFilter,
   addToCart,
+  addToWishlist,
   increaseQuantity,
   decreaseQuantity,
   removeCartItem,
   checkOutAllItems,
+  cartOpenStateUpdate,
+  wishlistOpenStateUpdate,
+  removeWishlistItem,
+  menuStateUpdate,
 } = productSlice.actions;

@@ -1,8 +1,6 @@
 * {
-  /* box-sizing: border-box;
-  padding: 0; */
+  box-sizing: border-box;
   margin-top: 0;
-  /* font: normal 11px/22px Arial, Sans-Serif; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

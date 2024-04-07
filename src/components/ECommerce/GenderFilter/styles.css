@@ -1,25 +1,25 @@
-.size-filter {
+.gender-filter {
   margin: 10px auto auto auto;
   border: 2px solid #f0f0f0;
   padding: 5px;
 }
 
-.size-text p {
+.gender-text p {
   font-weight: bold;
   padding: 0px 10px;
 }
 
-.size-chips {
+.gender-chips {
   padding: 0px 10px;
 }
 
-.size-chips label input {
+.gender-chips label input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-.size-chips label {
+.gender-chips label {
   display: inline-block;
   position: relative;
   cursor: pointer;
@@ -34,20 +34,19 @@
   height: 35px;
   font-size: 0.8em;
   margin-bottom: 8px;
-  margin-right: 8px;
-  border-radius: 50%;
+  margin-right: 15px;
   line-height: 35px;
   text-align: center;
 }
 
-.checkmark {
+.gender-checkmark {
   position: absolute;
   top: 0;
   left: 0;
-  width: 35px;
+  width: 45px;
   height: 35px;
   font-size: 0.8em;
-  border-radius: 50%;
+  border-radius: 20%;
   box-sizing: border-box;
   line-height: 35px;
   text-align: center;
@@ -57,12 +56,12 @@
   font-weight: bold;
 }
 
-.checkmark:hover {
+.gender-checkmark:hover {
   border: 2px solid black;
   box-sizing: border-box;
 }
 
-input:checked ~ .checkmark {
+input:checked ~ .gender-checkmark {
   background-color: black;
   color: #ececec;
 }

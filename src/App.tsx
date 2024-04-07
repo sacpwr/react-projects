@@ -7,8 +7,20 @@ import GridView from "./components/GridView/GridView";
 import ECommerce from "./components/ECommerce";
 import Slider from "./components/Slider/Slider";
 import SliderInfinite from "./components/SliderInfinite/SliderInfinite";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "./components/ECommerce/redux/hooks";
+import { menuStateUpdate } from "./components/ECommerce/redux/productSlice";
 
 function App() {
+  const { menuState } = useAppSelector((state) => state.product.data);
+  const dispatch = useAppDispatch();
+
+  const handleMenuState = () => {
+    dispatch(menuStateUpdate());
+  };
+
   const views = [
     "Weather",
     "Counter",
@@ -18,7 +30,7 @@ function App() {
     "Slider",
     "SliderInfinite",
   ];
-  const [selectedView, setSelectedView] = useState(views[6]);
+  const [selectedView, setSelectedView] = useState(views[4]);
 
   const renderViews = () => {
     switch (selectedView) {
@@ -43,7 +55,10 @@ function App() {
 
   return (
     <>
-      <div className="head-bar">
+      <div className={`menu-bar`} onClick={handleMenuState}>
+        🌐
+      </div>
+      <div className={`head-bar ${menuState ? "head-bar-hide" : ""} `}>
         <span className="select-view-text">Select View :</span>
         <select
           onChange={(item) => {

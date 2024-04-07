@@ -1,0 +1,116 @@
+.footer-bar {
+  width: 100%;
+  height: 250px;
+  bottom: 0;
+  background-color: white;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  position: relative;
+}
+
+.footer-social {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-fb {
+  background: url("fb.jpg");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: -26px -26px;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.footer-tw {
+  background: url(twitter.png);
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: -2px -2px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.footer-in {
+  background: url("linkedin.webp");
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: 143px;
+  background-position: -46px -46px;
+  border-radius: 30px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.footer-address {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contact-logo {
+  float: left;
+  background: url(contact-no.jpg);
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  background-position: -4px -4px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.contact-no {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.footer-contact-details {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.email-logo {
+  float: left;
+  background: url(email.png);
+  height: 30px;
+  width: 30px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  background-position: -4px -4px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.email-id {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.footer-copyright {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  margin-top: 10px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+.copyright-text {
+  display: inline-block;
+  margin-left: 50px;
+  height: 0px;
+  vertical-align: middle;
+}

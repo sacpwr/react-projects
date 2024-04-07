@@ -1,42 +1,39 @@
 .ecom-container {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-areas:
+    "size-filter"
+    "products";
   max-width: 1200px;
-  margin: 0px auto auto;
+  margin: 10px auto auto;
+}
+
+.ecom-filter {
+  margin-left: 10px;
+  grid-area: size-filter;
 }
 
 .ecom-products {
+  grid-area: products;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .found-elements {
+  margin-top: 10px;
   padding: 15px 15px;
   display: grid;
   height: 30px;
   align-content: center;
 }
 
-.product-free-shipping {
-  position: absolute;
-  color: #ececec;
-  top: 10px;
-  right: 10px;
-  padding: 0px 5px;
-  font-size: 0.8em;
-  background-color: #1b1a20;
-  cursor: default;
-  z-index: 1;
-  border-radius: 20px;
-  opacity: 0.5;
-}
-
 @media only screen and (min-width: 768px) {
   .ecom-container {
     display: grid;
     grid-template-columns: 1fr 4fr;
+    grid-template-areas: "size-filter products products products products";
     max-width: 1200px;
-    margin: 0px auto auto;
+    margin: 10px auto auto;
   }
   .ecom-products {
     display: grid;

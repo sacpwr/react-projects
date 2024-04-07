@@ -19,7 +19,7 @@ export default function SizeFilters() {
         return selSizes;
       });
     }
-    dispatch(sizeFilter({ selectedSizeTypes: selectedSizes }));
+    dispatch(sizeFilter({ selectedSizeTypes: new Set<string>(selectedSizes) }));
   };
 
   return (

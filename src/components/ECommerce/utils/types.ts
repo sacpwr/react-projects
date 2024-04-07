@@ -10,4 +10,5 @@ export type IProduct = {
   sku: number;
   style: string;
   title: string;
+  gender: string;
 };

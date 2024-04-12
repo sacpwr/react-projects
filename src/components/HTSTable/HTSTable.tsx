@@ -260,7 +260,7 @@ export default function HTSTable() {
                 Table heading
               </th>
               <th
-                className={getHeaderSortStyle("id")}
+                className={getHeaderSortStyle("cell5")}
                 onClick={() => handleHeaderClick("cell5")}
               >
                 Table heading

@@ -12,6 +12,11 @@ import {
   useAppSelector,
 } from "./components/ECommerce/redux/hooks";
 import { menuStateUpdate } from "./components/ECommerce/redux/productSlice";
+import MockCountryCity from "./components/MockCountryCity/MockCountryCity";
+import HTSTable from "./components/HTSTable/HTSTable";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   const { menuState } = useAppSelector((state) => state.product.data);
@@ -29,8 +34,10 @@ function App() {
     "E-commerce",
     "Slider",
     "SliderInfinite",
+    "MockCountryCity",
+    "HTSTable",
   ];
-  const [selectedView, setSelectedView] = useState(views[4]);
+  const [selectedView, setSelectedView] = useState(views[8]);
 
   const renderViews = () => {
     switch (selectedView) {
@@ -48,6 +55,10 @@ function App() {
         return <Slider />;
       case "SliderInfinite":
         return <SliderInfinite />;
+      case "MockCountryCity":
+        return <MockCountryCity />;
+      case "HTSTable":
+        return <HTSTable />;
       default:
         return <span>No View Selected</span>;
     }

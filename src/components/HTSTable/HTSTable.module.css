@@ -1,0 +1,119 @@
+.showRecord {
+  float: left;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.showRecordText {
+  padding: 0 10px;
+}
+
+.thRightBorderRemove {
+  border-right: 1px solid transparent;
+}
+
+.searchTR {
+  height: 50px;
+}
+
+.searchBar {
+  position: relative;
+  height: 40px;
+  width: 400px;
+  float: right;
+  border: 2px solid rgb(221, 220, 220);
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.searchIconSpan {
+  float: left;
+  height: 100%;
+}
+
+.searchIcon {
+  font-size: 20px;
+}
+
+.searchText {
+  height: 100%;
+  border: none;
+  width: 90%;
+  float: left;
+}
+
+.clearButton {
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  right: 5px;
+  top: 5px;
+  font-weight: bold;
+}
+
+.clearButton:hover {
+  color: red;
+}
+
+.searchText:focus {
+  outline-width: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pageLinkColor {
+  color: black !important;
+  font-size: 20px !important;
+}
+
+.pageLinkColor:hover {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgb(199, 197, 197) !important;
+}
+
+.activePageNumber {
+  background-color: rgb(199, 197, 197) !important;
+  font-weight: bold;
+}
+
+.htsContainer {
+  max-width: 1200px;
+  max-width: 1200px;
+  margin: 10px auto auto;
+}
+
+.headerCellDefault {
+  background: url(default.png);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.headerCellUp {
+  background: url(up_arrow.png);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.headerCellDown {
+  background: url(down_arrow.png);
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.oddTr {
+  background-color: rgb(238, 238, 238) !important;
+  color: black;
+}
